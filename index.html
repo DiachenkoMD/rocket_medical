@@ -10,10 +10,324 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkbox.css">
+
+    <script src="https://unpkg.com/vue@next"></script>
 
     <script src="js/script.js"></script>
 </head>
 <body>
-    Hello world!
+    <div id="app">
+        <div class="intro">
+            <header>
+                <div class="header_sizer">
+                    <div class="logo">
+                        <img src="assets/logo.svg" alt="Rocket Medical Logo">
+                    </div>
+                    <div class="header_right_nav">
+                        <ul>
+                            <li><a href="">О нас</a></li>
+                            <li><a href="">Статистика</a></li>
+                            <li><a href="">О сервисах</a></li>
+                            <li><a href="">Сервисы</a></li>
+                            <li><a href="">Отзывы</a></li>
+                            <li><a href="">Контакты</a></li>
+                        </ul>
+                        <div class="language_selector">
+                            <span>RU</span>
+                        </div>
+                        <div class="phone">
+                            +7 (260) 942-28-83
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="intro-info">
+                <div class="intro-text">
+                    <div class="positioner"> <!--- helps position this data via flex -->
+                        <div class="title">
+                            <higher>Европейский</higher> <!--- custom tag for creating bigger letters -->
+                            <br> инновационный <br> агрегатор медицинских <br> услуг по всему миру
+                        </div>
+                        <div class="description">
+                            Мы предоставляем высококачественные медицинские услуги на выезде вне зависимости где вы находитесь. Обращаясь к нам - вы получаете лучший сервис и лучшие цены в любой стране мира.
+                        </div>
+                        <a href="#" class="action-button">Заказать услуги</a>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="assets/intro_image.svg" alt="Rocket Medical Science">
+                </div>
+            </div>
+        </div>
+        <div class="stats sized">
+            <h1 class="stats-title category-title">Наша статистика</h1>
+            <h6 class="stats-subtitle">Цифры говорят сами за себя</h6>
+            <div class="stats-data">
+                <div class="stats-item">
+                    <h1 class="si-title">200+</h1>
+                    <div class="si-description">
+                        Подписано контрактов с медицинскими учреждениями
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <h1 class="si-title">12000+</h1>
+                    <div class="si-description">
+                        Подписано контрактов с медицинскими учреждениями
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <h1 class="si-title">5000+</h1>
+                    <div class="si-description">
+                        Сдано тестов и анализов через нашу систему
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <h1 class="si-title">10+</h1>
+                    <div class="si-description">
+                        Стран в которых мы <br> работаем
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <h1 class="si-title">100+</h1>
+                    <div class="si-description">
+                        Сотрудников <br> в компании
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-us sized">
+            <div class="image">
+                <img src="assets/about-us.svg" alt="About Rocket Medical">
+            </div>
+            <div class="info">
+                <h1 class="title">О нас</h1>
+                <p class="description">
+                    <span class="highlight">Rocket Medical</span> - это компания единомышленников с разных стран, которая поставила себе амбициозную цель воплотить в жизнь агрегатор медицинских услуг, которым можно будет пользоваться где бы вы не находились. Мы лидирующая HealthTech компания с штатом больше 300 человек, главным офисом в Цюрихе и более 40 представительствам в других странах. Наша основная задача стоит в том, что бы наши клиенты имели возможность получить качественный сервис в любой точке мире и в любое время дня и ночи. Наша компания сотрудничает только с клиниками лидирующеми на своем рынке, ведущими специалистами в здравоохранении, а так же высокотехнологичными лабораториями. Мы всегда открыты к сотрудничеству и будем рады взаимовыгодной работе.
+                </p>
+            </div>
+        </div>
+        <div class="how-we-work sized">
+            <div class="scheme">
+                <h1 class="title">Как мы работаем</h1>
+                <img src="assets/how-we-work.svg" alt="How Rocket Medical Works">
+            </div>
+            <div class="image">
+                <img src="assets/equals.svg" alt="Equals" class="equals">
+                <img src="assets/how-we-work-image.svg" alt="Rocket Medical" class="factory">
+            </div>
+        </div>
+        <div class="sphere-shape-container">
+            <div class="features-shape-wrapper">
+                <div class="features sized">
+                    <h1 class="title category-title">Виды услуг</h1>
+                    <div class="features-list row">
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/1.svg" alt="Rocket Medical Feature 1" style="margin-right: -30px">
+                                <h5>Feature 1</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/2.svg" alt="Rocket Medical Feature 2" style="margin-right: -30px">
+                                <h5>Feature 2</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/3.svg" alt="Rocket Medical Feature 3">
+                                <h5>Feature 3</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/4.svg" alt="Rocket Medical Feature 4" style="margin-right: -30px; margin-bottom: -20px">
+                                <h5>Feature 4</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/5.svg" alt="Rocket Medical Feature 5" style="margin-right: -30px">
+                                <h5>Feature 5</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/6.svg" alt="Rocket Medical Feature 6">
+                                <h5>Feature 6</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/7.svg" alt="Rocket Medical Feature 7" style="margin-right: -30px">
+                                <h5>Feature 7</h5>
+                            </div>
+                        </div>
+                        <div class="feature-item-wrapper col-lg-3 col-md-3 col-xs-6">
+                            <div class="feature-item">
+                                <img src="assets/features_icons/8.svg" alt="Rocket Medical Feature 8" style="margin-right: -30px">
+                                <h5>Feature 8</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback sized">
+                <h1 class="title category-title">Отзывы наших клиентов</h1>
+                <div class="feedback-list row">
+                    <div class="feedback-item col-lg-6 col-md-6 col-xs-12">
+                        <div class="feedback-data">
+                            <div class="feedback-title">
+                                Невероятный опыт
+                            </div>
+                            <div class="feedback-description">
+                                Я уже не первый раз в этом обращался и мне очень подобаеться.Вона поступила, она очень корректно, она компетентна. В своем индивидуальном пидходи.Дуже уважается.
+                                В клинике все чисто и опрятно. Круглосуточно работает. У меня нет никаких претензий.
+                            </div>
+                        </div>
+                        <div class="feedback-author">
+                            <div class="avatar" style="background: url('assets/avatar.png')">
+                            </div>
+                            <div class="author-data">
+                                <div class="username">
+                                    Диана Лумани
+                                </div>
+                                <div class="company">
+                                    CEO, ABC Corporation
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-item col-lg-6 col-md-6 col-xs-12">
+                        <div class="feedback-data">
+                            <div class="feedback-title">
+                                Рекомендую
+                            </div>
+                            <div class="feedback-description">
+                                Я уже не первый раз в этом обращался и мне очень подобаеться.Вона поступила, она очень корректно, она компетентна. В своем индивидуальном пидходи.Дуже уважается.
+                                В клинике все чисто и опрятно. Круглосуточно работает. У меня нет никаких претензий.
+                            </div>
+                        </div>
+                        <div class="feedback-author">
+                            <div class="avatar" style="background: url('assets/avatar.png')">
+                            </div>
+                            <div class="author-data">
+                                <div class="username">
+                                    Анастания Товали
+                                </div>
+                                <div class="company">
+                                    CEO, ABC Corporation
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contacts sized">
+            <h1 class="title category-title">Контакты</h1>
+            <div class="contacts-panel">
+                <div class="contacts-details">
+                    <h4>Есть направление от врача?</h4>
+                    <p>
+                        Мы позаботимся о вашем комфорте. Сфотографируйте направления, загрузите и оставьте ваши контактные данные.
+                    </p>
+                    <p>
+                        Мы сформируем для вас заказ на нужные анализы, вам останется только прийти и сдать то, что надо.
+                    </p>
+                </div>
+                <div class="contacts-form">
+                    <form action="#" method="post">
+                        <div class="fields row">
+                            <div class="field-wrap col-lg-6 col-md-6 col-xs-12">
+                                <a href="#" class="download-directions">
+                                    <img src="assets/directions.svg" alt="Rocket Medical Directions Download">
+                                    <span>Загрузите направления</span>
+                                </a>
+                            </div>
+                            <div class="field-wrap col-lg-6 col-md-6 col-xs-12">
+                                <input type="text" class="form-control" placeholder="*Имя">
+                            </div>
+                            <div class="field-wrap col-lg-6 col-md-6 col-xs-12">
+                                <input type="text" class="form-control" placeholder="*Фамилия">
+                            </div>
+                            <div class="field-wrap col-lg-6 col-md-6 col-xs-12">
+                                <input type="tel" class="form-control" placeholder="*Телефон">
+                            </div>
+                            <div class="field-wrap col-lg-6 col-md-6 col-xs-12">
+                                <input type="email" class="form-control" placeholder="*Електронный адрес">
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px">
+                            <input type="checkbox" id="agree_with_policy">
+                            <label for="agree_with_policy">Нажимая на кнопку, вы соглашаетесь с условиями обработки персональных данных</label>
+                        </div>
+                        <button class="action-button">Отправить</button>
+                    </form>
+                </div>
+                <img src="assets/magnifier.svg" alt="Magnifier" class="magnifier-image">
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content sized">
+                <div class="left-side">
+                    <div class="logo">
+                        <img src="assets/logo_white.svg" alt="Rocket Medical White Logo">
+                    </div>
+                    <div class="rights_info">
+                        <p>Copyright © 2021 Rocket Medical</p>
+                        <p>All rights reserved</p>
+                    </div>
+                    <div class="social_media_links">
+                        <ul>
+                            <li><a href="#"><img src="assets/icons/instagram.svg" alt="Rocket Medical Instagram"></a></li>
+                            <li><a href="#"><img src="assets/icons/dribbble.svg" alt="Rocket Medical Dribbble"></a></li>
+                            <li><a href="#"><img src="assets/icons/twitter.svg" alt="Rocket Medical Twitter"></a></li>
+                            <li><a href="#"><img src="assets/icons/youtube.svg" alt="Rocket Medical Youtube"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="company_links">
+                        <h5>Компания</h5>
+                        <ul>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Статистика</a></li>
+                            <li><a href="#">О сервисах</a></li>
+                            <li><a href="#">Сервисы</a></li>
+                            <li><a href="#">Отзывы</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="help_links">
+                        <h5>Помощь</h5>
+                        <div class="terms">
+                            <a href="#">Terms of service</a>
+                        </div>
+                        <div class="privacy">
+                            <a href="#">Privacy policy</a>
+                        </div>
+                        <div style="margin-top: 40px">
+                            <div class="language_selector">
+                                <span>RU</span>
+                            </div>
+                            <div class="phone">
+                                +7 (260) 942-28-83
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_sub">
+                        <h5>Будь в курсе новостей</h5>
+                        <div class="news-input-wrapper">
+                            <input type="email" class="news-input" placeholder="Введите ваш email адрес">
+                            <img src="assets/send.svg" alt="Send Icon">
+                        </div>
+                        <button class="action-button">Заказть услуги</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
