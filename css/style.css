@@ -101,16 +101,16 @@ header{
     align-items: center;
 }
 
-.header_right_nav ul{
+.header_right_nav .nav-links{
     padding-left: 0;
     list-style: none;
 }
 
-.header_right_nav ul li{
+.header_right_nav .nav-links li{
     display: inline-block;
 }
 
-.header_right_nav ul li a{
+.header_right_nav .nav-links li a{
     color: #fff;
     text-decoration: none;
     display: block;
@@ -129,7 +129,10 @@ header{
     margin-left: 20px;
     position: relative;
     cursor: pointer;
+    position: relative;
+    user-select: none;
 }
+
 .language_selector:before{
     content: "";
     width: 0;
@@ -141,6 +144,34 @@ header{
     top: -10px;
     left: 1px;
 }
+
+.language_selector .language_selector-dropdown{
+    position: absolute;
+    left: -5px;
+    top: 30px;
+    overflow: hidden;
+    height: 0;
+    transition: .15s;
+}
+.language_selector.opened .language_selector-dropdown{
+    height: auto;
+}
+.language_selector.opened:before{
+    transform: rotate(180deg);
+}
+.language_selector-dropdown ul{
+    list-style: none;
+    padding-left: 0;
+    background: #fff;
+    color: #131313;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 25px;
+}
+.language_selector-dropdown li span.active{
+    color: var(--red);
+}
+
 .phone{
     margin-left: 20px;
     font-weight: 600;
@@ -283,11 +314,45 @@ header{
     justify-content: center;
     align-items: flex-end;
 }
+.how-we-work .scheme{
+    position: relative;
+}
 .how-we-work .scheme .title{
     text-transform: uppercase;
     color: var(--blue);
     font-weight: bold;
     margin-bottom: 50px;
+}
+
+.how-we-work .scheme .step{
+    position: absolute;
+    max-width: 150px;
+    text-align: center;
+    color: #131313;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.step-1{
+    top: 290px;
+    left: 3%;
+}
+
+.step-2{
+    bottom: -60px;
+    left: 16%;
+    max-width: 300px !important;
+}
+
+.step-3{
+    top: 290px;
+    right: 23%;
+}
+
+.step-4{
+    bottom: -60px;
+    right: 3%;
 }
 
 .how-we-work .image{
