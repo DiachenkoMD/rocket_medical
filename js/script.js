@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     {
                         name: "UA",
                         translation: {
-                            
+
                         }
                     },
                     {
@@ -144,9 +144,79 @@ document.addEventListener("DOMContentLoaded", function () {
                 }else{
                     dropdownParentEl.classList.remove("opened");
                 }
+            },
+            openNav(){
+                let nav = document.getElementsByClassName("floating-nav")[0];
+                let closeNav = document.getElementsByClassName("close-nav")[0];
+                nav.style.top = "0";
+                closeNav.style.top = "35px";
+                disableScroll();
+            },
+            closeNav(){
+                let nav = document.getElementsByClassName("floating-nav")[0];
+                let closeNav = document.getElementsByClassName("close-nav")[0];
+                nav.style.top = "-100%";
+                closeNav.style.top = "-100%";
+                enableScroll();
+            },
+
+            scrollTop(){
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
             }
         }
     };
 
     Vue.createApp(VueApp).mount('#app');
+
+
+    var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+    function preventDefault(e) {
+        e.preventDefault();
+    }
+
+    function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+            preventDefault(e);
+            return false;
+        }
+    }
+
+    var supportsPassive = false;
+    try {
+        window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+            get: function () { supportsPassive = true; }
+        }));
+    } catch(e) {}
+
+    var wheelOpt = supportsPassive ? { passive: false } : false;
+    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+    function disableScroll() {
+        window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+        window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+        window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+        window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+
+    function enableScroll() {
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+        window.removeEventListener('touchmove', preventDefault, wheelOpt);
+        window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+
+    let scrollTopButton = document.getElementsByClassName("to-top")[0];
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > window.outerHeight || document.documentElement.scrollTop > window.outerHeight) {
+            scrollTopButton.style.opacity = "1";
+        } else {
+            scrollTopButton.style.opacity = "0";
+        }
+    }
+
 });

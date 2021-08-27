@@ -153,9 +153,11 @@ header{
     height: 0;
     transition: .15s;
 }
+
 .language_selector.opened .language_selector-dropdown{
     height: auto;
 }
+
 .language_selector.opened:before{
     transform: rotate(180deg);
 }
@@ -725,4 +727,111 @@ footer .right-side h5{
     top: 50%;
     right: 8px;
     transform: translateY(-50%);
+}
+
+.news_sub{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Floating navigation */
+
+.open-nav{
+    width: 35px;
+    height: 25px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.open-nav div{
+    height: 3px;
+    background: #fff;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.floating-nav{
+    position: fixed;
+    top: -100%; left:0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: .5s;
+}
+
+.floating-nav nav{
+    text-align: center;
+}
+.floating-nav .nav-links{
+    padding-left: 0;
+    list-style: none;
+}
+.floating-nav .nav-links li{
+    text-align: center;
+    padding: 20px;
+}
+.floating-nav .nav-links li a{
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.floating-nav .language_selector{
+    display: inline-block;
+}
+.floating-nav .selected_language{
+    color: #000;
+}
+
+.floating-nav .language_selector-dropdown ul{
+    background: #F2F2F2;
+}
+
+.close-nav{
+    position: fixed;
+    top: -100%;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+
+/*To top button*/
+.to-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    transition: .25s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #EE1C42;
+    height: 40px;
+    width: 40px;
+
+    border-radius: 100%;
+
+    z-index: 99;
+
+    cursor: pointer;
+}
+.to-top img{
+    transition: .25s;
+}
+.to-top:hover img{
+    transform: scale(1.1);
 }
